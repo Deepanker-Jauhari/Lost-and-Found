@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LoginAndSignUp</string>
+    <string name="hello">Hello World</string>
+    <string name="greeting">Good Morning</string>
+</resources>
