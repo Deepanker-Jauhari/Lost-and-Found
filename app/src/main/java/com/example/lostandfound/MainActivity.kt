@@ -34,33 +34,40 @@ class MainActivity : AppCompatActivity() {
                 nameTextView.text = fullName as CharSequence?
             }
 
+
         binding.btnPostLostItem.setOnClickListener{
             val intent = Intent(this, PostLostItemActivity::class.java)
+            intent.putExtra("path_key", email2)
             startActivity(intent)
         }
 
         binding.btnPostFoundItem.setOnClickListener{
             val intent = Intent(this, PostFoundItemActivity::class.java)
+            intent.putExtra("path_key", email2)
             startActivity(intent)
         }
 
         binding.btnFeedLostItem.setOnClickListener{
             val intent = Intent(this, FeedLostItemActivity::class.java)
+            intent.putExtra("path_key", email2)
             startActivity(intent)
         }
 
         binding.btnFeedFoundItem.setOnClickListener{
             val intent = Intent(this, FeedFoundItemActivity::class.java)
+            intent.putExtra("path_key", email2)
             startActivity(intent)
         }
 
         binding.btnMyPosts.setOnClickListener{
             val intent = Intent(this, MyPostsActivity::class.java)
+            intent.putExtra("path_key", email2)
             startActivity(intent)
         }
 
         binding.btnUpdatePass.setOnClickListener{
             val intent = Intent(this, UpdatePasswordActivity::class.java)
+            intent.putExtra("path_key", email2)
             startActivity(intent)
         }
         binding.textView3.setOnClickListener{
