@@ -23,7 +23,7 @@ class SignInActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
-        firebaseUser = firebaseAuth.currentUser!!
+//        firebaseUser = firebaseAuth.currentUser!!
         binding.textView.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
@@ -43,6 +43,7 @@ class SignInActivity : AppCompatActivity() {
                 if (email.endsWith("@iitp.ac.in")) {
                     firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
+                            firebaseUser = firebaseAuth.currentUser!!
                             if (firebaseUser.isEmailVerified) {
                                 Toast.makeText(this, "User is verified", Toast.LENGTH_SHORT).show();
                                 val intent = Intent(this, MainActivity::class.java)
