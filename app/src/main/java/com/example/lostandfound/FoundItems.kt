@@ -9,7 +9,7 @@ data class FoundItems(
     val image2Url: String? = null,
     val image3Url: String? = null,
     val image4Url: String? = null,
-    val image5Url: String? = null){
+    val image5Url: String? = null, val userID: String? = null){
     constructor(): this("",
         "",
         "",
@@ -18,5 +18,5 @@ data class FoundItems(
         "",
         "",
         "",
-        "")
+        "","")
 }

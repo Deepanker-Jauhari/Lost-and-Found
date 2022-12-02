@@ -9,6 +9,8 @@ import com.example.lostandfound.databinding.ActivitySignInBinding
 import com.example.lostandfound.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.messaging.FirebaseMessaging
 
 class SignInActivity : AppCompatActivity() {
 
@@ -48,6 +50,7 @@ class SignInActivity : AppCompatActivity() {
                                 Toast.makeText(this, "User is verified", Toast.LENGTH_SHORT).show();
                                 val intent = Intent(this, MainActivity::class.java)
                                 intent.putExtra("email_key", email)
+                                retrieveAndStoreToken()
                                 startActivity(intent)
                             } else {
                                 Toast.makeText(this, "User isn't verified!!", Toast.LENGTH_SHORT).show();
@@ -65,5 +68,18 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(this, "Empty fields are not allowed!!", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun retrieveAndStoreToken() {
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    val token: String? = it.result
+                    val userID = FirebaseAuth.getInstance().currentUser!!.uid
+                    FirebaseDatabase.getInstance().getReference("Tokens").child(userID).child("token")
+                        .setValue(token)
+                }
+            }
+
     }
 }

@@ -4,11 +4,25 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/lost_and_found_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/lost_and_found_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginAndSignUp">
+        <activity
+            android:name=".MyFoundItems"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MyLostItems"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".UpdatePasswordActivity"
             android:exported="false">
@@ -17,7 +31,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MyPostsActivity"
+            android:name=".ProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

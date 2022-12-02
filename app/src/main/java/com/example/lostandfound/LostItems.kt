@@ -8,7 +8,7 @@ data class LostItems(val fullName: String? = null,
                      val image2Url: String? = null,
                      val image3Url: String? = null,
                      val image4Url: String? = null,
-                     val image5Url: String? = null){
+                     val image5Url: String? = null, val userID: String? = null){
     constructor(): this("",
     "",
     "",
@@ -17,5 +17,5 @@ data class LostItems(val fullName: String? = null,
     "",
     "",
     "",
-    "")
+    "", "")
 }

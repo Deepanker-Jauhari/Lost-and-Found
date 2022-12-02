@@ -8,7 +8,6 @@ import com.example.lostandfound.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -32,9 +31,6 @@ class MainActivity : AppCompatActivity() {
                 val rollNumber = it.child("rollNumber").value
                 val phoneNumber = it.child("phoneNumber").value
     //            email.replace(",", ".")
-
-                val nameTextView: TextView = findViewById(R.id.textView2)
-                nameTextView.text = fullName as CharSequence?
             }
 
 
@@ -59,19 +55,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnMyPosts.setOnClickListener{
-            val intent = Intent(this, MyPostsActivity::class.java)
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnUpdatePass.setOnClickListener{
-            val intent = Intent(this, UpdatePasswordActivity::class.java)
-            startActivity(intent)
-        }
-        binding.textView3.setOnClickListener{
-            val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
-        }
     }
+
 
 
 //    private fun readData(email: String?) {

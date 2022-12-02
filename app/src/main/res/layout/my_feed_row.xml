@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -214,7 +214,7 @@
         android:id="@+id/bottom_border"
         android:layout_width="0dp"
         android:layout_height="10dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:scaleType="centerCrop"
         android:src="@drawable/horizontal_line"
         app:layout_constraintEnd_toEndOf="parent"

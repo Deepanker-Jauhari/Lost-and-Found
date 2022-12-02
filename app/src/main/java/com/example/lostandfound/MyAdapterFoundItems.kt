@@ -43,8 +43,8 @@ class MyAdapterFoundItems(private val context: android.content.Context, private 
     // Holds the views for adding it to image and text
     class MyViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val fullName: TextView = itemView.findViewById(R.id.textView7)
-        val phoneNumber: TextView = itemView.findViewById(R.id.textView8)
-        val locationFound: TextView = itemView.findViewById(R.id.textView9)
+        val phoneNumber: TextView = itemView.findViewById(R.id.textView9)
+        val locationFound: TextView = itemView.findViewById(R.id.textView8)
         val message: TextView = itemView.findViewById(R.id.textView10)
         val image1: ImageView = itemView.findViewById(R.id.imageView1)
         val image2: ImageView = itemView.findViewById(R.id.imageView2)
