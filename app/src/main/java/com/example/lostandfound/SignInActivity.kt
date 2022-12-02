@@ -3,6 +3,7 @@ package com.example.lostandfound
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import android.widget.EditText
 import android.widget.Toast
 import com.example.lostandfound.databinding.ActivitySignInBinding
@@ -20,6 +21,8 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var emailEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
+        supportActionBar?.hide() //hide the title bar
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -3,6 +3,7 @@ package com.example.lostandfound
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +31,8 @@ class ProfileActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
+        supportActionBar?.hide() //hide the title bar
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)

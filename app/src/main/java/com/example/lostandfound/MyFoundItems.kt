@@ -3,6 +3,7 @@ package com.example.lostandfound
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,9 @@ class MyFoundItems : AppCompatActivity() {
     private var db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
+        supportActionBar?.hide() //hide the title bar
         super.onCreate(savedInstanceState)
         binding = ActivityMyFoundItemsBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_my_found_items)

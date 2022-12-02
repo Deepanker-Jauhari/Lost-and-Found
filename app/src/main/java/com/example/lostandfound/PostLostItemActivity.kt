@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.Editable
+import android.view.Window
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -53,6 +54,8 @@ class PostLostItemActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
+        supportActionBar?.hide() //hide the title bar
         super.onCreate(savedInstanceState)
         binding = ActivityPostLostItemBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -3,6 +3,7 @@ package com.example.lostandfound
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import android.widget.Toast
 import com.example.lostandfound.databinding.ActivityForgotPasswordBinding
 import com.example.lostandfound.databinding.ActivitySignInBinding
@@ -16,6 +17,9 @@ class ForgotPasswordActivity : AppCompatActivity() {
     private lateinit var firebaseUser: FirebaseUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
+        supportActionBar?.hide() //hide the title bar
         super.onCreate(savedInstanceState)
         binding = ActivityForgotPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)

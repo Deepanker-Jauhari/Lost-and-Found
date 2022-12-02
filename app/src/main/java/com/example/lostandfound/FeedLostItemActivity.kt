@@ -3,6 +3,7 @@ package com.example.lostandfound
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,9 @@ class FeedLostItemActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
+        supportActionBar?.hide() //hide the title bar
         super.onCreate(savedInstanceState)
         binding = ActivityFeedLostItemBinding.inflate(layoutInflater)
         setContentView(binding.root)

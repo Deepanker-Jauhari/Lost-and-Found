@@ -8,6 +8,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.Window
 import android.widget.EditText
 import android.widget.Toast
 import com.example.lostandfound.databinding.ActivitySignUpBinding
@@ -28,6 +29,8 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var userID: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
+        supportActionBar?.hide() //hide the title bar
         super.onCreate(savedInstanceState)
 
         binding = ActivitySignUpBinding.inflate(layoutInflater)
